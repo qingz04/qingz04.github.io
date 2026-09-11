@@ -132,6 +132,8 @@
   .hero .tagline { font-family: var(--f-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin: 14px 0 20px; }
   .hero p { margin: 0 0 14px; color: var(--ink-2); max-width: 60ch; font-size: 17px; }
   .hero p strong { color: var(--ink); font-weight: 600; }
+  .hero p em { font-style: italic; color: var(--ink); }
+  .hero p:last-of-type { font-size: 16px; color: var(--ink-3); }
   .affil {
     margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--rule);
     display: flex; flex-wrap: wrap; gap: 6px 26px;
@@ -259,8 +261,9 @@
     <div>
       <h1>Zheng Qing</h1>
       <p class="tagline">Electrical Engineering · Purdue University · Hardware → Robotics</p>
-      <p>I came up through hardware — three years of quantum-optics instrumentation, RTL, PCB design and IC packaging — and I am now moving into <strong>robotics: state estimation and predictive control</strong> for ground and aerial vehicles.</p>
-      <p>I don't think of it as switching fields. A state estimator is only as good as the sensor chain underneath it, and having built that chain myself, I tend to ask where a measurement's error originates before reaching for a better filter. That instinct is what I bring to robotics.</p>
+      <p>I'm a senior in electrical engineering at Purdue. I came up building hardware — quantum-optics instrumentation, RTL, PCB design — and I'm now moving into <strong>robotics</strong>, working on state estimation and predictive control for ground and aerial vehicles.</p>
+      <p>I like knowing <em>why</em> something works, not just that it does. Having built the sensor chains that measurements come from, my instinct when an estimate goes wrong is to trace the error back to its source before reaching for a better filter. That habit is the main thing I bring with me.</p>
+      <p>Away from the lab I play lead guitar — British rock, hard rock, punk metal — and I spent high school running a music club in Suzhou. At Purdue I help run career events for the Chinese student association: résumé workshops, mock interviews, getting alumni in a room with students.</p>
       <div class="affil">
         <span><span class="k">Degree</span>B.S. EE, expected May 2027</span>
         <span><span class="k">Advisor</span>Prof. Ziran Wang</span>
@@ -458,10 +461,6 @@
         <div class="tags">
           <span class="tag">Mandarin — native</span><span class="tag">English — fluent</span>
         </div>
-      </div>
-      <div class="row">
-        <div class="k">Outside</div>
-        <p>Lead guitar in a band in Suzhou — British rock, hard rock, punk metal. At Purdue I help run career development events for PUCSSA: resume workshops, mock interviews, alumni networking.</p>
       </div>
     </section>
 
