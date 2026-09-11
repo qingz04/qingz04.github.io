@@ -168,8 +168,8 @@
 
   /* ---------- about ---------- */
   .about {
-    margin-left: calc(210px + 28px);   /* = .proj title column + gap */
-    max-width: 52ch;                   /* = .proj .desc */
+    /* left edge = the heading; right edge = where the project descriptions end */
+    max-width: calc(210px + 28px + 52ch);
     font-family: var(--serif);
     font-weight: 300;
     font-size: 15px;
@@ -217,7 +217,6 @@
     .clock { display: none; }
     .main { margin-left: 0; padding: 56px var(--gutter) 60px; }
     .proj, .cv { grid-template-columns: 1fr; }
-    .about { margin-left: 0; }
     .proj .title { margin-bottom: 8px; }
     .cv .k { border-top: 1px solid var(--hair); padding-bottom: 2px; }
     .cv .v { border-top: 0; padding-top: 0; }
