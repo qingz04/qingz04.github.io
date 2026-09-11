@@ -92,8 +92,9 @@
   /* ---------- main column ---------- */
   .main {
     margin-left: var(--side);
-    padding: 22px var(--gutter) 90px calc(var(--gutter) * 0.6);
-    max-width: 900px;
+    /* push the register toward the middle on wide screens; ~30% in from the left edge */
+    padding: 22px var(--gutter) 90px clamp(24px, 12vw, 260px);
+    max-width: calc(900px + clamp(24px, 12vw, 260px));
   }
   .clock {
     position: fixed;
