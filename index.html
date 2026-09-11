@@ -168,10 +168,11 @@
 
   /* ---------- about ---------- */
   .about {
-    max-width: 58ch;
+    margin-left: calc(210px + 28px);   /* = .proj title column + gap */
+    max-width: 52ch;                   /* = .proj .desc */
     font-family: var(--serif);
     font-weight: 300;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.5;
     color: var(--ink);
   }
@@ -216,6 +217,7 @@
     .clock { display: none; }
     .main { margin-left: 0; padding: 56px var(--gutter) 60px; }
     .proj, .cv { grid-template-columns: 1fr; }
+    .about { margin-left: 0; }
     .proj .title { margin-bottom: 8px; }
     .cv .k { border-top: 1px solid var(--hair); padding-bottom: 2px; }
     .cv .v { border-top: 0; padding-top: 0; }
@@ -229,7 +231,7 @@
   <div class="name">Zheng Qing</div>
 
   <nav class="nav">
-    <a href="#about">About</a>
+    <a href="#about">About me</a>
     <a href="#projects">Projects</a>
     <a href="resume.pdf" target="_blank" rel="noopener">C.V.</a>
   </nav>
@@ -263,7 +265,7 @@
 <main class="main">
 
   <section id="about">
-    <h2>About</h2>
+    <h2>About me</h2>
     <div class="about">
       <p>I'm a senior undergraduate in electrical engineering at Purdue College of Engineering. I came up building hardware — quantum-optics, RTL, PCB design — and I'm now moving into <strong>robotics</strong>, working on state estimation and predictive control for ground and aerial vehicles.</p>
       <p>I like knowing <em>why</em> something works, not just that it does. Having built the sensor chains that measurements come from, my instinct when an estimate goes wrong is to trace the error back to its source before reaching for a better filter. That habit is the main thing I bring with me.</p>
