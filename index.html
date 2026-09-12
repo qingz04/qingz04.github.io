@@ -165,6 +165,11 @@
     cursor: pointer;
   }
   .proj .view button:hover, .proj .view a:hover { text-decoration: underline; text-underline-offset: 2px; }
+  .proj.with-fig { grid-template-columns: 210px 1fr 220px; }
+  .proj .fig-side { margin: 0; align-self: start; }
+  .proj .fig-side button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; line-height: 0; }
+  .proj .fig-side img { display: block; width: 100%; height: auto; }
+  .proj .fig-side figcaption { margin-top: 6px; font-size: 10.5px; line-height: 1.5; color: var(--ink-3); }
 
   /* ---------- about ---------- */
   .about {
@@ -216,7 +221,8 @@
     .side .foot { display: none; }
     .clock { display: none; }
     .main { margin-left: 0; padding: 56px var(--gutter) 60px; }
-    .proj, .cv { grid-template-columns: 1fr; }
+    .proj, .proj.with-fig, .cv { grid-template-columns: 1fr; }
+    .proj .fig-side { max-width: 320px; margin-top: 16px; }
     .proj .title { margin-bottom: 8px; }
     .cv .k { border-top: 1px solid var(--hair); padding-bottom: 2px; }
     .cv .v { border-top: 0; padding-top: 0; }
@@ -316,7 +322,7 @@
       </div>
     </article>
 
-    <article class="proj" id="p4">
+    <article class="proj with-fig" id="p4">
       <div class="title">Current-Control Module for a Magneto-Optical Trap</div>
       <div>
         <div class="meta">
@@ -326,8 +332,12 @@
           <div><span class="k">Site</span><span>Purdue University, West Lafayette, IN</span></div>
         </div>
         <p class="desc">A current-control box for the trap's magnetic coils, built end to end — board, fan-cooled enclosure, closed-loop test with a Hall probe. Presented as a poster and technical paper at the SURF Summer Symposium.</p>
-        <div class="view"><button type="button" class="fig" data-src="img/surf-poster.jpg" data-alt="SURF poster: Biphoton generation and quantum optics">[View poster]</button> &nbsp; <button type="button" class="fig" data-src="img/mot-box.jpg" data-alt="The current-control box, open: two fans, two boards, wiring">[View box]</button> &nbsp; <button type="button" class="fig" data-src="img/mot-trap.jpg" data-alt="The magneto-optical trap's glass cell, atoms glowing">[View trap]</button></div>
+        <div class="view"><button type="button" class="fig" data-src="img/surf-poster.jpg" data-alt="SURF poster: Biphoton generation and quantum optics">[View poster]</button> &nbsp; <button type="button" class="fig" data-src="img/mot-box.jpg" data-alt="The current-control box, open: two fans, two boards, wiring">[View box]</button></div>
       </div>
+      <figure class="fig-side">
+        <button type="button" class="fig" data-src="img/mot-trap.jpg" data-alt="The magneto-optical trap's glass cell, atoms fluorescing"><img src="img/mot-trap.jpg" alt="The magneto-optical trap's glass cell, atoms fluorescing"></button>
+        <figcaption>The trap. Atoms fluorescing in the glass cell.</figcaption>
+      </figure>
     </article>
 
     <article class="proj" id="p5">
