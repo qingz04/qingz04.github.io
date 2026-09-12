@@ -165,8 +165,10 @@
     cursor: pointer;
   }
   .proj .view button:hover, .proj .view a:hover { text-decoration: underline; text-underline-offset: 2px; }
-  .proj.with-fig { grid-template-columns: 210px 1fr 220px; }
-  .proj .fig-side { margin: 0 0 0 56px; align-self: start; }
+  /* side figure sits outside the grid so it never squeezes the description;
+     its left edge is 600px in from where the description column starts */
+  .proj.with-fig { position: relative; }
+  .proj .fig-side { position: absolute; top: 0; left: calc(210px + 28px + 600px); width: 220px; margin: 0; }
   .proj .fig-side button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; line-height: 0; }
   .proj .fig-side img { display: block; width: 100%; height: auto; }
   .proj .fig-side figcaption { margin-top: 6px; font-size: 10.5px; line-height: 1.5; color: var(--ink-3); }
@@ -222,7 +224,7 @@
     .clock { display: none; }
     .main { margin-left: 0; padding: 56px var(--gutter) 60px; }
     .proj, .proj.with-fig, .cv { grid-template-columns: 1fr; }
-    .proj .fig-side { max-width: 320px; margin: 16px 0 0; }
+    .proj .fig-side { position: static; width: auto; max-width: 320px; margin: 16px 0 0; }
     .proj .title { margin-bottom: 8px; }
     .cv .k { border-top: 1px solid var(--hair); padding-bottom: 2px; }
     .cv .v { border-top: 0; padding-top: 0; }
