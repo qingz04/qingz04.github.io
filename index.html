@@ -209,7 +209,8 @@
     padding: clamp(14px, 3vw, 40px);
     cursor: zoom-out;
   }
-  .lb img { max-width: 100%; max-height: 100%; object-fit: contain; background: #fff; }
+  .lb img, .lb video { max-width: 100%; max-height: 100%; object-fit: contain; background: #000; cursor: default; }
+  .lb img { background: #fff; }
   .lb-hint {
     position: fixed; bottom: 16px; left: 0; right: 0; text-align: center;
     font-size: 10.5px; letter-spacing: 0.04em; color: rgba(255,255,255,0.6);
@@ -409,6 +410,7 @@
           <div><span class="k">Site</span><span>Purdue University, West Lafayette, IN</span></div>
         </div>
         <p class="desc">A real-time Pong in RTL: the VGA timing generator (640×480 at 60 Hz), the pixel rendering module, and FSM-based game logic with collision detection, taken through simulation, synthesis and hardware debugging.</p>
+        <div class="view"><button type="button" class="fig" data-video="media/vga-pong.mp4" data-alt="VGA Pong running on the FPGA">[View demo]</button></div>
       </div>
     </article>
 
@@ -465,6 +467,7 @@
 
 <div class="lb" id="lb" hidden>
   <img id="lbimg" alt="">
+  <video id="lbvid" controls playsinline hidden></video>
   <span class="lb-hint">Click anywhere or press Esc to close</span>
 </div>
 
@@ -479,13 +482,24 @@
   tick(); setInterval(tick, 1000);
 
   // lightbox
-  var lb = document.getElementById('lb'), lbimg = document.getElementById('lbimg');
-  function open(src, alt) { lbimg.src = src; lbimg.alt = alt || ''; lb.hidden = false; document.body.style.overflow = 'hidden'; }
-  function close() { lb.hidden = true; lbimg.removeAttribute('src'); document.body.style.overflow = ''; }
+  var lb = document.getElementById('lb'), lbimg = document.getElementById('lbimg'), lbvid = document.getElementById('lbvid');
+  function open(src, alt, isVideo) {
+    if (isVideo) { lbimg.hidden = true; lbvid.hidden = false; lbvid.src = src; lbvid.play().catch(function(){}); }
+    else { lbvid.hidden = true; lbimg.hidden = false; lbimg.src = src; lbimg.alt = alt || ''; }
+    lb.hidden = false; document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    lb.hidden = true; document.body.style.overflow = '';
+    lbimg.removeAttribute('src'); lbvid.pause(); lbvid.removeAttribute('src'); lbvid.load();
+  }
   Array.prototype.forEach.call(document.querySelectorAll('.fig'), function (b) {
-    b.addEventListener('click', function () { open(b.getAttribute('data-src'), b.getAttribute('data-alt')); });
+    b.addEventListener('click', function () {
+      var v = b.getAttribute('data-video');
+      open(v || b.getAttribute('data-src'), b.getAttribute('data-alt'), !!v);
+    });
   });
   lb.addEventListener('click', close);
+  lbvid.addEventListener('click', function (e) { e.stopPropagation(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) close(); });
 })();
 </script>
