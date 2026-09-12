@@ -261,11 +261,19 @@
       </ol>
     </div>
     <div>
+      <h4>Hardware Designs</h4>
+      <ol>
+        <li><a href="#h1">VGA Pong on FPGA</a></li>
+        <li><a href="#h2">Adjustable-Filter Speaker</a></li>
+        <li><a href="#h3">Heartbeat Detector</a></li>
+        <li><a href="#h4">Breathing LED — Two 555 Timers</a></li>
+      </ol>
+    </div>
+    <div>
       <h4>Other Experience</h4>
       <ol>
         <li><a href="#o1">Teaching — ECE 20875, ECE 20001</a></li>
         <li><a href="#o2">PUCSSA Career Development</a></li>
-        <li><a href="#o3">VGA Pong on FPGA</a></li>
         <li><a href="#o4">Flairmicro — IC Packaging</a></li>
         <li><a href="#o5">Lorentz Water Wheel — XJTLU SURF</a></li>
         <li><a href="#o6">ICM 2023 — Honorable Mention</a></li>
@@ -380,6 +388,61 @@
   </section>
 
 
+  <section id="hardware">
+    <h2>Hardware Designs</h2>
+
+    <article class="proj" id="h1">
+      <div class="title">VGA Pong on FPGA</div>
+      <div>
+        <div class="meta">
+          <div><span class="k">Type</span><span>ECE 270 Digital System Design, five-person team — Spring 2025</span></div>
+          <div><span class="k">Award</span><span><b>Best Project</b>, ECE 270 Digital System Design</span></div>
+          <div><span class="k">Stack</span><span>SystemVerilog, Pico-ICE FPGA</span></div>
+          <div><span class="k">Site</span><span>Purdue University, West Lafayette, IN</span></div>
+        </div>
+        <p class="desc">A real-time Pong in RTL: the VGA timing generator (640×480 at 60 Hz), the pixel rendering module, and FSM-based game logic with collision detection, taken through simulation, synthesis and hardware debugging.</p>
+        <div class="view"><button type="button" class="fig" data-video="media/vga-pong.mp4" data-alt="VGA Pong running on the FPGA">[View demo]</button></div>
+      </div>
+    </article>
+
+    <article class="proj" id="h2">
+      <div class="title">Adjustable-Filter Speaker</div>
+      <div>
+        <div class="meta">
+          <div><span class="k">Type</span><span>Analog breadboard build</span></div>
+          <div><span class="k">Site</span><span>Purdue University, West Lafayette, IN</span></div>
+        </div>
+        <p class="desc">An audio stage driving a small speaker, with high-pass and low-pass filtering whose cutoffs are set by hand — so what each filter does to a signal is heard directly rather than read off a scope.</p>
+        <div class="view"><button type="button" class="fig" data-video="media/filter-speaker.mp4" data-alt="Adjustable-filter speaker demo">[View demo]</button></div>
+      </div>
+    </article>
+
+    <article class="proj" id="h3">
+      <div class="title">Heartbeat Detector</div>
+      <div>
+        <div class="meta">
+          <div><span class="k">Type</span><span>Analog breadboard build</span></div>
+          <div><span class="k">Site</span><span>Purdue University, West Lafayette, IN</span></div>
+        </div>
+        <p class="desc">An LED shines through a fingertip and a photoresistor on the far side picks up the small change in transmitted light with each pulse. The signal is amplified and filtered on the breadboard and drives a second LED, which blinks in time with the heartbeat.</p>
+        <div class="view"><button type="button" class="fig" data-video="media/heartbeat-led.mp4" data-alt="Heartbeat detector demo">[View demo]</button></div>
+      </div>
+    </article>
+
+    <article class="proj" id="h4">
+      <div class="title">Breathing LED — Two 555 Timers</div>
+      <div>
+        <div class="meta">
+          <div><span class="k">Type</span><span>Analog breadboard build</span></div>
+          <div><span class="k">Parts</span><span>2 × NE555, potentiometer, RC network, LED</span></div>
+          <div><span class="k">Site</span><span>Purdue University, West Lafayette, IN</span></div>
+        </div>
+        <p class="desc">Two 555 timers: one runs slowly and sets the breathing rate, the other shapes that into a fade that ramps the LED up and down. A potentiometer on the first timer makes the rate adjustable by hand.</p>
+        <div class="view"><button type="button" class="fig" data-src="img/breathing-led.jpg" data-alt="Breathing LED circuit on the breadboard">[View circuit]</button> &nbsp; <button type="button" class="fig" data-video="media/breathing-led.mp4" data-alt="Breathing LED demo">[View demo]</button></div>
+      </div>
+    </article>
+  </section>
+
   <section id="other">
     <h2>Other Experience</h2>
 
@@ -403,19 +466,6 @@
           <div><span class="k">Site</span><span>Purdue University, West Lafayette, IN</span></div>
         </div>
         <p class="desc">Résumé workshops, mock interviews, career fairs, and getting alumni in a room with students — with companies including Midea, Eli Lilly and Huaqin.</p>
-      </div>
-    </article>
-
-    <article class="proj" id="o3">
-      <div class="title">VGA Pong on FPGA</div>
-      <div>
-        <div class="meta">
-          <div><span class="k">Type</span><span>ECE 270 Digital System Design, five-person team — Spring 2025</span></div>
-          <div><span class="k">Stack</span><span>SystemVerilog, Pico-ICE FPGA</span></div>
-          <div><span class="k">Site</span><span>Purdue University, West Lafayette, IN</span></div>
-        </div>
-        <p class="desc">A real-time Pong in RTL: the VGA timing generator (640×480 at 60 Hz), the pixel rendering module, and FSM-based game logic with collision detection, taken through simulation, synthesis and hardware debugging.</p>
-        <div class="view"><button type="button" class="fig" data-video="media/vga-pong.mp4" data-alt="VGA Pong running on the FPGA">[View demo]</button></div>
       </div>
     </article>
 
